@@ -41,7 +41,7 @@ def predict_image_class(image):
                 optimizer='rmsprop',
                 metrics=['accuracy'])
 
-    model.load_weights('50_epochs.h5')
+    model.load_weights('model/50_epochs.h5')
 
 
     image = image.resize((100,100))
