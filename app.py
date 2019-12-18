@@ -3,7 +3,7 @@ import json
 app = Flask(__name__)
 import numpy as np
 import os
-import cv2
+# import cv2
 import tensorflow as tf
 import keras
 from keras.models import Sequential
