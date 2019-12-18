@@ -8,3 +8,4 @@ Werkzeug==0.15.6
 Keras==2.1.5
 tensorflow==1.7.0
 Pillow==2.2.1
+h5py
