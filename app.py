@@ -56,18 +56,18 @@ def predict_image_class(image):
     prediction_result = classes.item(0)
 
 
-    if prediction_result == 0:
-        class_name = "hydro coco"
-    elif prediction_result == 1:
-        class_name = "mintz"
-    elif prediction_result == 2:
-        class_name = "morisca"
-    elif prediction_result == 3:
-        class_name = "pop mie"
-    elif prediction_result == 4:
-        class_name = "ultra milk" 
+    # if prediction_result == 0:
+    #     class_name = "hydro coco"
+    # elif prediction_result == 1:
+    #     class_name = "mintz"
+    # elif prediction_result == 2:
+    #     class_name = "morisca"
+    # elif prediction_result == 3:
+    #     class_name = "pop mie"
+    # elif prediction_result == 4:
+    #     class_name = "ultra milk" 
 
-    return class_name
+    return prediction_result
 
 @app.route('/', methods=['GET'])
 def return_response():
