@@ -13,6 +13,7 @@ import base64
 from keras.models import load_model
 from PIL import Image
 from io import BytesIO
+from keras.optimizers import adam
 
 def predict_image_class(image):
     model = Sequential()
@@ -35,22 +36,20 @@ def predict_image_class(image):
     model.add(Dense(5))
     model.add(Activation('sigmoid'))
 
+    opt = adam(lr=0.0001)
 
-
-    model.compile(loss='categorical_crossentropy',
-                optimizer='adam',
+    model.compile(loss='mean_squared_error',
+                optimizer=opt,
                 metrics=['accuracy'])
 
 
 
     model.load_weights('model/50_epochs.h5')
 
-
     image = image.resize((100,100))
 
     x = img_to_array(image)
 
-    x = np.expand_dims(x, axis=0)
 
     x = x.reshape((1,) + x.shape)
 
