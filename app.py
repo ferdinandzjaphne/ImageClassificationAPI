@@ -50,7 +50,7 @@ def predict_image_class(image):
 
     x = img_to_array(image)
 
-    x = np.expand_dims(x, axis=0)
+    # x = np.expand_dims(x, axis=0)
 
     x = x.reshape((1,) + x.shape)
 
