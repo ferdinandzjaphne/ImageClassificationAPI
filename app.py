@@ -41,6 +41,8 @@ def predict_image_class(image):
                 optimizer='rmsprop',
                 metrics=['accuracy'])
 
+
+
     model.load_weights('model/50_epochs.h5')
 
 
@@ -48,8 +50,18 @@ def predict_image_class(image):
 
     x = img_to_array(image)
 
+    x = np.expand_dims(x, axis=0)
+
     x = x.reshape((1,) + x.shape)
 
+    datagen = ImageDataGenerator(
+        rescale=1./255,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True
+    )
+
+    datagen.fit(x)
 
     classes = model.predict_classes(x)
 
