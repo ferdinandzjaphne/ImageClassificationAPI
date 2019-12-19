@@ -53,14 +53,14 @@ def predict_image_class(image):
 
     x = x.reshape((1,) + x.shape)
 
-    datagen = ImageDataGenerator(
-        rescale=1./255,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True
-    )
+    # datagen = ImageDataGenerator(
+    #     rescale=1./255,
+    #     shear_range=0.2,
+    #     zoom_range=0.2,
+    #     horizontal_flip=True
+    # )
 
-    datagen.fit(x)
+    # datagen.fit(x)
 
     classes = model.predict_classes(x)
 
